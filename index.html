@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aula Prática: Skills no Claude</title>
+    <meta
+      name="description"
+      content="Guia prático para uma aula de 1 hora sobre como usar, testar e criar skills no Claude Web."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,850&family=Public+Sans:wght@450;650;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317212b'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='34' font-family='Arial' font-weight='900' fill='%23f0b84a'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span class="brand-mark" aria-hidden="true"><span>/</span>S</span>
+        <span class="brand-copy">
+          <span>Skills na prática</span>
+          <small>/skill request</small>
+        </span>
+      </a>
+      <div class="header-console" aria-hidden="true">
+        <span class="console-caret">$</span>
+        <span class="console-text">/explicar o que é uma skill</span>
+      </div>
+      <nav class="topnav" aria-label="Navegação principal">
+        <a href="#preparo"><span>00</span> Preparo</a>
+        <a href="#usar"><span>01</span> Usar</a>
+        <a href="#criar"><span>02</span> Criar</a>
+        <a href="#testar"><span>03</span> Testar</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Aula de até 1 hora</p>
+          <h1 id="hero-title">Aprenda a usar skills no Claude Web</h1>
+          <p>
+            Siga os passos, copie os exemplos, teste no Claude e crie sua primeira skill reutilizável.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#preparo">Começar agora</a>
+            <span class="hero-note">Sem instalação. Tudo no navegador.</span>
+          </div>
+        </div>
+        <div class="hero-lab" aria-hidden="true">
+          <div class="lab-window">
+            <div class="lab-top"><span></span><span></span><span></span><strong>claude.skill</strong></div>
+            <div class="lab-line user"><b>/roleplay</b> Entrevistador exigente</div>
+            <div class="lab-flow">
+              <span>comando</span>
+              <i></i>
+              <span>papel</span>
+              <i></i>
+              <span>conversa</span>
+            </div>
+            <div class="lab-output">
+              <p>Simula a entrevista</p>
+              <p>Faz perguntas reais</p>
+              <p>Dá feedback objetivo</p>
+            </div>
+          </div>
+          <div class="skill-chip chip-a">/roleplay</div>
+          <div class="skill-chip chip-b">/explicar</div>
+          <div class="skill-chip chip-c">/roleplay</div>
+        </div>
+      </section>
+
+      <section class="layout">
+        <aside class="side" aria-label="Roteiro rápido">
+          <h2>Roteiro</h2>
+          <ol class="timeline">
+            <li><a href="#preparo"><span>0-5</span> Preparo</a></li>
+            <li><a href="#conceito"><span>5-15</span> Conceito</a></li>
+            <li><a href="#usar"><span>15-30</span> Usar skills</a></li>
+            <li><a href="#criar"><span>30-45</span> Criar skill</a></li>
+            <li><a href="#testar"><span>45-55</span> Melhorar</a></li>
+            <li><a href="#fechar"><span>55-60</span> Fechar</a></li>
+          </ol>
+        </aside>
+
+        <div class="content">
+          <section id="preparo" class="panel" aria-labelledby="preparo-title">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">0-5 min</p>
+                <h2 id="preparo-title">Preparo no Claude</h2>
+              </div>
+              <label class="done-check"><input type="checkbox" data-step-check="preparo" /> Concluí</label>
+            </div>
+            <div class="steps">
+              <article>
+                <span class="step-number">1</span>
+                <h3>Abra o Claude Web</h3>
+                <p>Entre na sua conta e comece uma conversa nova.</p>
+              </article>
+              <article>
+                <span class="step-number">2</span>
+                <h3>Use Haiku</h3>
+                <p>Escolha o modelo mais leve para testar mais vezes durante a aula.</p>
+              </article>
+              <article>
+                <span class="step-number">3</span>
+                <h3>Desative thinking</h3>
+                <p>Se aparecer thinking ou extended thinking, desligue para economizar uso.</p>
+              </article>
+            </div>
+            <div class="callout">
+              <strong>Se a interface estiver diferente:</strong> procure por modelo, modo de raciocínio ou thinking nas opções da conversa. O nome exato pode mudar.
+            </div>
+          </section>
+
+          <section id="conceito" class="panel" aria-labelledby="conceito-title">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">5-15 min</p>
+                <h2 id="conceito-title">O que é uma skill</h2>
+              </div>
+              <label class="done-check"><input type="checkbox" data-step-check="conceito" /> Concluí</label>
+            </div>
+            <div class="compare">
+              <article>
+                <h3>Prompt comum</h3>
+                <p>Você precisa explicar tudo que quer, toda vez.</p>
+                <code>Crie um post para divulgar uma aula gratuita sobre skills. Use gancho forte, linguagem simples, 3 ideias principais, exemplo prático, legenda curta, CTA no final e 3 hashtags.</code>
+              </article>
+              <article>
+                <h3>Skill</h3>
+                <p>A skill já guarda o processo. Você só passa o assunto no formato /skill request.</p>
+                <code>/post aula gratuita sobre skills</code>
+              </article>
+            </div>
+            <p class="demo-note">Na prática, a primeira palavra depois da barra escolhe a skill; o resto é o pedido real.</p>
+            <div class="skill-demo" aria-label="Comparação animada entre pedido comum e pedido com skill">
+              <article class="demo-window demo-basic">
+                <div class="demo-bar"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><strong>pedido comum</strong></div>
+                <div class="demo-line demo-user">Crie um post para divulgar uma aula gratuita sobre skills. Quero gancho, 3 ideias, exemplo, CTA e hashtags.</div>
+                <div class="demo-line demo-answer">Recebi várias regras no prompt. Se esquecer uma, o resultado muda.</div>
+              </article>
+              <article class="demo-window demo-skill">
+                <div class="demo-bar"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><strong>usando skill</strong></div>
+                <div class="demo-line demo-user"><b>/post</b> aula gratuita sobre skills</div>
+                <div class="demo-line demo-answer">Gerando: gancho, carrossel, legenda, CTA e 3 hashtags.</div>
+              </article>
+            </div>
+            <p class="plain">
+              Pense em skill como uma receita: você cria um comando, como /post ou /explicar, e depois passa só o assunto ou contexto que muda.
+            </p>
+          </section>
+
+          <section id="usar" class="panel" aria-labelledby="usar-title">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">15-30 min</p>
+                <h2 id="usar-title">Use 2 skills prontas</h2>
+              </div>
+              <label class="done-check"><input type="checkbox" data-step-check="usar" /> Concluí</label>
+            </div>
+            <p class="plain">Copie uma skill, cole no Claude e use o comando indicado. Comece pelo roleplay.</p>
+
+            <div class="skill-grid">
+              <article class="skill-card">
+                <div class="card-head">
+                  <h3>1. Roleplay</h3>
+                  <button data-copy="#skill-roleplay" aria-label="Copiar skill Roleplay">Copiar</button>
+                </div>
+                <pre id="skill-roleplay"><code># Roleplay Por Comando
+
+Você faz roleplay quando eu usar o comando /roleplay.
+
+Como usar:
+/roleplay [pessoa, profissão, personagem ou tipo de especialista]
+
+Quando eu usar esse comando:
+1. Entre imediatamente no papel pedido.
+2. Responda em primeira pessoa, como se a conversa já tivesse começado.
+3. Adapte tom, vocabulário e postura ao papel.
+4. Faça perguntas naturais para manter a conversa.
+5. Não explique a skill antes de responder.
+
+Regras:
+- Se for uma pessoa real ou famosa, faça uma simulação ficcional baseada na imagem pública, sem afirmar que você é essa pessoa real.
+- Se o papel envolver saúde, direito, dinheiro ou risco, mantenha limites claros e recomende ajuda profissional quando necessário.
+- Se o pedido for perigoso, ilegal ou abusivo, recuse e ofereca uma alternativa segura.
+
+Exemplos:
+/roleplay Psicólogo que usa TCC
+/roleplay Michael Jackson
+/roleplay Entrevistador de emprego exigente
+/roleplay Professor de inglês paciente
+/roleplay Cliente irritado reclamando de um produto
+/roleplay Sócrates me fazendo perguntas</code></pre>
+                <div class="examples">
+                  <button data-copy-text="/roleplay Psicólogo que usa TCC">Psicólogo TCC</button>
+                  <button data-copy-text="/roleplay Michael Jackson">Michael Jackson</button>
+                  <button data-copy-text="/roleplay Entrevistador de emprego exigente">Entrevista</button>
+                  <button data-copy-text="/roleplay Cliente irritado reclamando de um produto">Cliente irritado</button>
+                </div>
+              </article>
+
+              <article class="skill-card">
+                <div class="card-head">
+                  <h3>2. Explicador simples</h3>
+                  <button data-copy="#skill-explicar" aria-label="Copiar skill Explicador simples">Copiar</button>
+                </div>
+                <pre id="skill-explicar"><code># Explicador Simples Por Comando
+
+Você explica qualquer assunto quando eu usar o comando /explicar.
+
+Como usar:
+/explicar [tema]
+
+Quando eu usar esse comando:
+1. Explique como se eu fosse iniciante.
+2. Use uma analogia simples.
+3. Mostre um exemplo prático.
+4. Liste os 3 pontos mais importantes.
+5. Termine com uma pergunta para verificar se eu entendi.
+
+Regras:
+- Evite jargões.
+- Se precisar usar termo técnico, explique em seguida.
+- Não escreva respostas longas demais.
+
+Exemplos:
+/explicar o que é uma skill
+/explicar juros compostos
+/explicar como estudar inglês todo dia
+/explicar inteligência artificial para minha mãe</code></pre>
+                <div class="examples">
+                  <button data-copy-text="/explicar o que é uma skill">O que é skill</button>
+                  <button data-copy-text="/explicar juros compostos">Juros compostos</button>
+                  <button data-copy-text="/explicar inteligência artificial para minha mãe">IA simples</button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="criar" class="panel" aria-labelledby="criar-title">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">30-45 min</p>
+                <h2 id="criar-title">Crie sua própria skill</h2>
+              </div>
+              <label class="done-check"><input type="checkbox" data-step-check="criar" /> Concluí</label>
+            </div>
+            <div class="builder">
+              <article>
+                <h3>Escolha uma tarefa repetitiva</h3>
+                <ul>
+                  <li>Responder e-mails</li>
+                  <li>Estudar inglês</li>
+                  <li>Criar posts</li>
+                  <li>Revisar currículo</li>
+                  <li>Explicar temas difíceis</li>
+                  <li>Organizar tarefas</li>
+                </ul>
+              </article>
+              <article class="template-box">
+                <div class="card-head">
+                  <h3>Template básico</h3>
+                  <button data-copy="#skill-template" aria-label="Copiar template de skill">Copiar</button>
+                </div>
+                <pre id="skill-template"><code># Nome Da Skill
+
+Você é [papel].
+
+Objetivo:
+[O que esta skill ajuda a fazer.]
+
+Processo:
+1. [Primeiro passo]
+2. [Segundo passo]
+3. [Terceiro passo]
+
+Regras:
+- [O que sempre fazer]
+- [O que evitar]
+- [Tom desejado]
+- [Formato da resposta]
+
+Se faltar informação:
+Faça até 3 perguntas objetivas antes de responder.</code></pre>
+              </article>
+            </div>
+          </section>
+
+          <section id="testar" class="panel" aria-labelledby="testar-title">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">45-55 min</p>
+                <h2 id="testar-title">Teste e melhore</h2>
+              </div>
+              <label class="done-check"><input type="checkbox" data-step-check="testar" /> Concluí</label>
+            </div>
+            <div class="prompt-list">
+              <article>
+                <h3>Avaliar clareza</h3>
+                <button data-copy-text="Avalie esta skill. Ela está clara? O que pode melhorar para gerar respostas mais consistentes?">Copiar</button>
+              </article>
+              <article>
+                <h3>Reescrever melhor</h3>
+                <button data-copy-text="Reescreva esta skill deixando mais objetiva, prática e fácil para um iniciante usar.">Copiar</button>
+              </article>
+              <article>
+                <h3>Testar limites</h3>
+                <button data-copy-text="Teste esta skill com 3 exemplos diferentes e aponte onde ela pode falhar.">Copiar</button>
+              </article>
+            </div>
+            <table>
+              <thead>
+                <tr><th>Problema</th><th>Ajuste na skill</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Resposta genérica</td><td>Adicione público, objetivo e formato esperado.</td></tr>
+                <tr><td>Claude inventa informação</td><td>Inclua: não invente; pergunte se faltar contexto.</td></tr>
+                <tr><td>Texto longo demais</td><td>Defina limite: até 5 bullets, até 200 palavras.</td></tr>
+                <tr><td>Tom errado</td><td>Descreva o tom: simples, direto, profissional, informal.</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="fechar" class="panel finish" aria-labelledby="fechar-title">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">55-60 min</p>
+                <h2 id="fechar-title">Fechamento</h2>
+              </div>
+              <label class="done-check finish-check"><input type="checkbox" data-step-check="fechar" /> Concluí</label>
+            </div>
+            <p>Antes de sair, tenha uma skill que você realmente usaria de novo.</p>
+            <button class="wide-copy" data-copy-text="Crie uma skill para uma tarefa repetitiva da minha rotina. Primeiro me pergunte qual tarefa eu quero automatizar, depois monte a skill em formato simples.">Copiar desafio final</button>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" role="status" aria-live="polite">Copiado</div>
+    <script src="script.js"></script>
+  </body>
+</html>
