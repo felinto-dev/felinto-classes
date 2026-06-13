@@ -32,9 +32,10 @@
       </div>
       <nav class="topnav" aria-label="Navegação principal">
         <a href="#preparo"><span>00</span> Preparo</a>
-        <a href="#usar"><span>01</span> Usar</a>
-        <a href="#criar"><span>02</span> Criar</a>
-        <a href="#testar"><span>03</span> Testar</a>
+        <a href="#claude"><span>01</span> Claude</a>
+        <a href="#usar"><span>02</span> Usar</a>
+        <a href="#criar"><span>03</span> Criar</a>
+        <a href="#testar"><span>04</span> Testar</a>
       </nav>
     </header>
 
@@ -80,8 +81,9 @@
           <ol class="timeline">
             <li><a href="#preparo"><span>0-5</span> Preparo</a></li>
             <li><a href="#conceito"><span>5-15</span> Conceito</a></li>
-            <li><a href="#usar"><span>15-30</span> Usar skills</a></li>
-            <li><a href="#criar"><span>30-45</span> Criar skill</a></li>
+            <li><a href="#claude"><span>15-25</span> Criar no Claude</a></li>
+            <li><a href="#usar"><span>25-35</span> Usar skill</a></li>
+            <li><a href="#criar"><span>35-45</span> Criar variação</a></li>
             <li><a href="#testar"><span>45-55</span> Melhorar</a></li>
             <li><a href="#fechar"><span>55-60</span> Fechar</a></li>
           </ol>
@@ -156,10 +158,60 @@
             </p>
           </section>
 
+          <section id="claude" class="panel" aria-labelledby="claude-title">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">15-25 min</p>
+                <h2 id="claude-title">Crie uma skill na interface</h2>
+              </div>
+              <label class="done-check"><input type="checkbox" data-step-check="claude" /> Concluí</label>
+            </div>
+            <p class="plain">Abra a área de skills no Claude, crie os arquivos manualmente e teste na mesma conversa com um comando curto.</p>
+
+            <div class="claude-lab">
+              <article class="file-tree" aria-label="Estrutura de arquivos da skill">
+                <div class="card-head">
+                  <h3>Arquivos</h3>
+                  <button data-copy="#skill-files" aria-label="Copiar estrutura de arquivos">Copiar</button>
+                </div>
+                <pre id="skill-files"><code>receita/
+- SKILL.md</code></pre>
+              </article>
+
+              <article class="skill-card manual-skill">
+                <div class="card-head">
+                  <h3>SKILL.md</h3>
+                  <button data-copy="#claude-skill-md" aria-label="Copiar conteúdo do arquivo SKILL.md">Copiar</button>
+                </div>
+                <pre id="claude-skill-md"><code>---
+name: receita
+description: Sugira receitas simples, saudáveis e práticas, com substituições inteligentes.
+---
+
+# Receita Saudável
+
+Use esta skill quando eu pedir uma receita, refeição ou ideia de comida.
+
+Processo:
+1. Sugira uma receita simples para o pedido.
+2. Priorize proteína e ingredientes fáceis de encontrar.
+3. Evite açúcar, ultraprocessados e fritura.
+4. Inclua substituições inteligentes quando fizer sentido.
+5. Termine com uma lista curta de ingredientes e modo de preparo.
+
+Regras:
+- Escreva em português brasileiro natural.
+- Seja prático e direto.
+- Não transforme a resposta em texto longo de blog.
+- Se faltar informação importante, faça até 2 perguntas antes de montar a receita.</code></pre>
+              </article>
+            </div>
+          </section>
+
           <section id="usar" class="panel" aria-labelledby="usar-title">
             <div class="section-head">
               <div>
-                <p class="eyebrow">15-30 min</p>
+                <p class="eyebrow">25-35 min</p>
                 <h2 id="usar-title">Use 2 skills prontas</h2>
               </div>
               <label class="done-check"><input type="checkbox" data-step-check="usar" /> Concluí</label>
@@ -189,7 +241,7 @@ Quando eu usar esse comando:
 Regras:
 - Se for uma pessoa real ou famosa, faça uma simulação ficcional baseada na imagem pública, sem afirmar que você é essa pessoa real.
 - Se o papel envolver saúde, direito, dinheiro ou risco, mantenha limites claros e recomende ajuda profissional quando necessário.
-- Se o pedido for perigoso, ilegal ou abusivo, recuse e ofereca uma alternativa segura.
+- Se o pedido for perigoso, ilegal ou abusivo, recuse e ofereça uma alternativa segura.
 
 Exemplos:
 /roleplay Psicólogo que usa TCC
@@ -208,37 +260,39 @@ Exemplos:
 
               <article class="skill-card">
                 <div class="card-head">
-                  <h3>2. Explicador simples</h3>
-                  <button data-copy="#skill-explicar" aria-label="Copiar skill Explicador simples">Copiar</button>
+                  <h3>2. Planejador crítico</h3>
+                  <button data-copy="#skill-plano" aria-label="Copiar skill Planejador crítico">Copiar</button>
                 </div>
-                <pre id="skill-explicar"><code># Explicador Simples Por Comando
+                <pre id="skill-plano"><code># Planejador Crítico Por Comando
 
-Você explica qualquer assunto quando eu usar o comando /explicar.
+Você ajuda a amadurecer planos por meio de perguntas rigorosas quando eu usar o comando /plano.
 
 Como usar:
-/explicar [tema]
+/plano [plano, ideia, projeto ou decisão]
 
 Quando eu usar esse comando:
-1. Explique como se eu fosse iniciante.
-2. Use uma analogia simples.
-3. Mostre um exemplo prático.
-4. Liste os 3 pontos mais importantes.
-5. Termine com uma pergunta para verificar se eu entendi.
+1. Entreviste-me sobre todos os aspectos importantes do plano até chegarmos a um entendimento compartilhado.
+2. Percorra cada ramo da árvore de decisões, resolvendo dependências uma por uma.
+3. Faça apenas uma pergunta por vez.
+4. Para cada pergunta, inclua sua resposta recomendada.
+5. Depois da minha resposta, avance para a próxima decisão mais dependente ou mais arriscada.
 
 Regras:
-- Evite jargões.
-- Se precisar usar termo técnico, explique em seguida.
-- Não escreva respostas longas demais.
+- Use português brasileiro natural.
+- Seja direto, rigoroso e prático.
+- Não tente resolver tudo em uma única mensagem.
+- Quando AskUserInput estiver disponível, use AskUserInput.
+- Se encontrar uma contradição, pare e resolva a contradição antes de continuar.
 
 Exemplos:
-/explicar o que é uma skill
-/explicar juros compostos
-/explicar como estudar inglês todo dia
-/explicar inteligência artificial para minha mãe</code></pre>
+/plano lançar uma mentoria de IA para professores
+/plano criar um app de organização pessoal
+/plano reformular meu currículo para vagas internacionais
+/plano montar uma aula prática sobre skills</code></pre>
                 <div class="examples">
-                  <button data-copy-text="/explicar o que é uma skill">O que é skill</button>
-                  <button data-copy-text="/explicar juros compostos">Juros compostos</button>
-                  <button data-copy-text="/explicar inteligência artificial para minha mãe">IA simples</button>
+                  <button data-copy-text="/plano lançar uma mentoria de IA para professores">Mentoria IA</button>
+                  <button data-copy-text="/plano criar um app de organização pessoal">App pessoal</button>
+                  <button data-copy-text="/plano montar uma aula prática sobre skills">Aula de skills</button>
                 </div>
               </article>
             </div>
@@ -247,7 +301,7 @@ Exemplos:
           <section id="criar" class="panel" aria-labelledby="criar-title">
             <div class="section-head">
               <div>
-                <p class="eyebrow">30-45 min</p>
+                <p class="eyebrow">35-45 min</p>
                 <h2 id="criar-title">Crie sua própria skill</h2>
               </div>
               <label class="done-check"><input type="checkbox" data-step-check="criar" /> Concluí</label>

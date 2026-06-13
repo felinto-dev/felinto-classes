@@ -272,6 +272,7 @@ h1 {
 
 .steps,
 .compare,
+.claude-lab,
 .builder,
 .prompt-list {
   display: grid;
@@ -281,6 +282,7 @@ h1 {
 
 .steps article,
 .compare article,
+.claude-lab article,
 .builder article,
 .prompt-list article,
 .skill-card {
@@ -292,6 +294,7 @@ h1 {
 
 .steps article,
 .compare article,
+.claude-lab article,
 .builder article,
 .prompt-list article { padding: 18px; }
 
@@ -326,6 +329,22 @@ th { color: var(--muted); }
 }
 
 .compare { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.claude-lab {
+  grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr);
+  margin-top: 18px;
+}
+
+.claude-lab article { min-width: 0; }
+
+.claude-lab .card-head { padding: 0; }
+
+.claude-lab pre {
+  max-width: 100%;
+  margin: 14px 0 0;
+}
+
+.manual-skill pre { max-height: 430px; }
 
 code,
 pre {
@@ -618,6 +637,7 @@ th {
   .steps,
   .compare,
   .skill-demo,
+  .claude-lab,
   .builder,
   .prompt-list { grid-template-columns: 1fr; }
   .side { position: static; }
@@ -810,6 +830,7 @@ h1 {
 .panel,
 .steps article,
 .compare article,
+.claude-lab article,
 .builder article,
 .prompt-list article,
 .skill-card {
@@ -858,6 +879,7 @@ h1 {
 
 .steps article,
 .compare article,
+.claude-lab article,
 .builder article,
 .prompt-list article,
 .skill-card {
@@ -866,6 +888,7 @@ h1 {
 
 .steps article:hover,
 .compare article:hover,
+.claude-lab article:hover,
 .builder article:hover,
 .prompt-list article:hover,
 .skill-card:hover {
