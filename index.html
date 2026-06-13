@@ -35,7 +35,7 @@
         <a href="#claude"><span>01</span> Claude</a>
         <a href="#usar"><span>02</span> Usar</a>
         <a href="#criar"><span>03</span> Criar</a>
-        <a href="#testar"><span>04</span> Testar</a>
+        <a href="#testar"><span>04</span> Buscar</a>
       </nav>
     </header>
 
@@ -84,7 +84,7 @@
             <li><a href="#claude"><span>15-25</span> Criar no Claude</a></li>
             <li><a href="#usar"><span>25-35</span> Usar skill</a></li>
             <li><a href="#criar"><span>35-45</span> Criar variação</a></li>
-            <li><a href="#testar"><span>45-55</span> Melhorar</a></li>
+            <li><a href="#testar"><span>45-55</span> Buscar</a></li>
             <li><a href="#fechar"><span>55-60</span> Fechar</a></li>
           </ol>
         </aside>
@@ -351,35 +351,31 @@ Faça até 3 perguntas objetivas antes de responder.</code></pre>
             <div class="section-head">
               <div>
                 <p class="eyebrow">45-55 min</p>
-                <h2 id="testar-title">Teste e melhore</h2>
+                <h2 id="testar-title">Encontre skills úteis</h2>
               </div>
               <label class="done-check"><input type="checkbox" data-step-check="testar" /> Concluí</label>
             </div>
-            <div class="prompt-list">
-              <article>
-                <h3>Avaliar clareza</h3>
-                <button data-copy-text="Avalie esta skill. Ela está clara? O que pode melhorar para gerar respostas mais consistentes?">Copiar</button>
+            <p class="search-intro">Use diretórios de skills como um cardápio de ideias. A pessoa não precisa instalar nada: ela procura uma skill parecida, lê as instruções e pede ao Claude para adaptar para sua rotina.</p>
+            <div class="directory-grid" aria-label="Sites para pesquisar skills prontas">
+              <article class="directory-card directory-card-featured">
+                <span class="search-index">01</span>
+                <h3>SkillsMP</h3>
+                <p>Bom para buscar por profissão, tarefa e exemplos reais de skills publicadas no GitHub.</p>
+                <a class="directory-link" href="https://skillsmp.com/" target="_blank" rel="noreferrer">Abrir site</a>
               </article>
-              <article>
-                <h3>Reescrever melhor</h3>
-                <button data-copy-text="Reescreva esta skill deixando mais objetiva, prática e fácil para um iniciante usar.">Copiar</button>
+              <article class="directory-card">
+                <span class="search-index">02</span>
+                <h3>Skills Directory</h3>
+                <p>Útil para procurar skills de escrita, pesquisa e trabalho, com avisos de segurança.</p>
+                <a class="directory-link" href="https://www.skillsdirectory.com/" target="_blank" rel="noreferrer">Abrir site</a>
               </article>
-              <article>
-                <h3>Testar limites</h3>
-                <button data-copy-text="Teste esta skill com 3 exemplos diferentes e aponte onde ela pode falhar.">Copiar</button>
+              <article class="directory-card">
+                <span class="search-index">03</span>
+                <h3>Awesome Claude Skills</h3>
+                <p>Curadoria no GitHub. Menos visual, mas ótima para ver como outras pessoas organizam skills.</p>
+                <a class="directory-link" href="https://github.com/travisvn/awesome-claude-skills" target="_blank" rel="noreferrer">Abrir lista</a>
               </article>
             </div>
-            <table>
-              <thead>
-                <tr><th>Problema</th><th>Ajuste na skill</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Resposta genérica</td><td>Adicione público, objetivo e formato esperado.</td></tr>
-                <tr><td>Claude inventa informação</td><td>Inclua: não invente; pergunte se faltar contexto.</td></tr>
-                <tr><td>Texto longo demais</td><td>Defina limite: até 5 bullets, até 200 palavras.</td></tr>
-                <tr><td>Tom errado</td><td>Descreva o tom: simples, direto, profissional, informal.</td></tr>
-              </tbody>
-            </table>
           </section>
 
           <section id="fechar" class="panel finish" aria-labelledby="fechar-title">
